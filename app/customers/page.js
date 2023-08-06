@@ -1,7 +1,140 @@
 import React from "react";
+import OVERVIEWWALLET from "../assets/overviewWallet.svg";
+import CustomersCard from "./CustomersCard";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import Table from "../components/Table";
+import { headers } from "next/dist/client/components/headers";
+import Image from "next/image";
+import OLIVIA from "../assets/olivia-avatar.png";
+import CustomerProfile from "./CustomerProfile";
 
 const CustomersPage = () => {
-	return <div>customers</div>;
+  return (
+    <div className="container px-10 pt-10">
+      <CustomerProfile />
+      {/* <h1 className="text-3xl my-6">Customers</h1>
+      <div className="flex gap-x-4">
+        {balanceData.map((item, i) => {
+          return (
+            <CustomersCard
+              key={i}
+              value={item.value}
+              title={item.title}
+              percentage={item.percentage}
+            />
+          );
+        })}
+      </div>
+      <div className="flex justify-between items-center my-10">
+        <Input placeholder="Search for customer’s name" />
+        <Button textTitle="Export" />
+      </div>
+      <div>
+        <Table headers={tableHeaders} data={data} />
+      </div> */}
+    </div>
+  );
 };
 
 export default CustomersPage;
+
+const balanceData = [
+  {
+    percentage: "40%",
+    title: "Total customers",
+    value: "2,420",
+  },
+  {
+    percentage: "10%",
+    title: "Total active customers",
+    value: "1,210",
+  },
+  {
+    percentage: "20%",
+    title: "Total defaulters",
+    value: "316",
+  },
+];
+
+export const TRANSACTION_STATUS = {
+  SUCCESFUL: "Successful",
+  FAILED: "Failed",
+};
+
+const tableHeaders = [
+  "ID",
+  "CUSTOMERS",
+
+  "DATE",
+  "VOUCHER NO.",
+  "KYC STATUS",
+  "VIEW",
+];
+
+const data = [
+  {
+    id: "#3066",
+    customer: (
+      <div className="flex items-center gap-2">
+        <Image className="w-8 h-8" alt="profile" src={OLIVIA} />
+        <div>
+          <p className="text-xs mb-1">Olivia Rhye</p>
+          <p className="text-gray-500 text-xs">+234 803 0000</p>
+        </div>
+      </div>
+    ),
+    data: "Jan 6, 2022",
+    voucherNo: "HKJKD",
+    transactionStatus: TRANSACTION_STATUS.SUCCESFUL,
+    view: "view",
+  },
+  {
+    id: "#3066",
+    customer: (
+      <div className="flex items-center gap-2">
+        <Image className="w-8 h-8" alt="profile" src={OLIVIA} />
+        <div>
+          <p className="text-xs mb-1">Olivia Rhye</p>
+          <p className="text-gray-500 text-xs">+234 803 0000</p>
+        </div>
+      </div>
+    ),
+    data: "Jan 6, 2022",
+    voucherNo: "HKJKD",
+    transactionStatus: TRANSACTION_STATUS.SUCCESFUL,
+    view: "view",
+  },
+  {
+    id: "#3066",
+    customer: (
+      <div className="flex items-center gap-2">
+        <Image className="w-8 h-8" alt="profile" src={OLIVIA} />
+        <div>
+          <p className="text-xs mb-1">Olivia Rhye</p>
+          <p className="text-gray-500 text-xs">+234 803 0000</p>
+        </div>
+      </div>
+    ),
+    data: "Jan 6, 2022",
+    voucherNo: "HKJKD",
+    transactionStatus: TRANSACTION_STATUS.SUCCESFUL,
+    view: "view",
+  },
+  {
+    id: "#3066",
+    customer: (
+      <div className="flex items-center gap-2">
+        <Image className="w-8 h-8" alt="profile" src={OLIVIA} />
+        <div>
+          <p className="text-xs mb-1">Olivia Rhye</p>
+          <p className="text-gray-500 text-xs">+234 803 0000</p>
+        </div>
+      </div>
+    ),
+    data: "Jan 6, 2022",
+    voucherNo: "HKJKD",
+    transactionStatus: TRANSACTION_STATUS.SUCCESFUL,
+    view: "view",
+  },
+];
