@@ -1,13 +1,8 @@
 import React from "react";
-import OVERVIEWWALLET from "../assets/overviewWallet.svg";
 import CustomersCard from "./CustomersCard";
 import Input from "../components/Input";
-import Button from "../components/Button";
+import Button from "../components/button";
 import Table from "../components/Table";
-import { headers } from "next/dist/client/components/headers";
-import Image from "next/image";
-import OLIVIA from "../assets/olivia-avatar.png";
-import CustomerProfile from "./CustomerProfile";
 import data from "../data/data";
 import ProfileComp from "../components/ProfileComp";
 import Link from "next/link";

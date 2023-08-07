@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import AccountCard from "./AccountCard";
 import Image from "next/image";
 import Input from "../components/Input";
-import Button from "../components/Button";
+import Button from "../components/button";
 import Table from "../components/Table";
 import DOLLAR from "../assets/dollar-black.png";
 import ACCOUNTICON from "../assets/order-trans-icon.png";
 import MPESA from "../assets/m-pesa-avatar.png";
 import GTB from "../assets/gtb-avatar.png";
-import CSVModal from '../components/CSVModal'
+import CSVModal from "../components/CSVModal";
 import PercentageCard from "./PercentageCard";
 import {
 	MdLink,

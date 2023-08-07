@@ -3,7 +3,7 @@ import React from "react";
 import data from "../data/data";
 
 import ProfileComp from "../components/ProfileComp";
-import Button from "../components/Button";
+import Button from "../components/button";
 import Input from "../components/Input";
 import Card from "../components/Card";
 import Table from "../components/Table";

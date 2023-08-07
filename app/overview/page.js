@@ -3,7 +3,7 @@ import data from "../data/data";
 import OVERVIEWWALLET from "../assets/overviewWallet.svg";
 import Card from "../components/Card";
 import Input from "../components/Input";
-import Button from "../components/Button";
+import Button from "../components/button";
 import Table from "../components/Table";
 // import { headers } from "next/dist/client/components/headers";
 import Image from "next/image";

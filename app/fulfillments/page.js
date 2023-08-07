@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../components/Input";
-import Button from "../components/Button";
+import Button from "../components/button";
 import Table from "../components/Table";
 import data from "../data/data";
 import ProfileComp from "../components/ProfileComp";
