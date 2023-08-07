@@ -61,7 +61,7 @@ function Table({ headers, data }) {
 															key={i}
 															className={`py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap `}
 														>
-															{typeof item == "string" &&
+															{/* {typeof item == "string" &&
 															item.toLowerCase() == "failed" ? (
 																<Badge
 																	textColor={"#B42318"}
@@ -91,7 +91,7 @@ function Table({ headers, data }) {
 																/>
 															) : (
 																item
-															)}
+															)} */} {item}
 														</td>
 													</>
 												);

@@ -35,7 +35,17 @@ const OverviewPage = () => {
 				deposit: each.depositSum,
 				date: each.dateAndTime,
 				voucherNo: each.voucherNumber,
-				transactionStatus: each.transStatus,
+				transactionStatus: (
+					<p
+						className={
+							each.transStatus == "sucessful"
+								? `text-green-700 bg-green-50`
+								: `text-red-600 bg-red-50`
+						}
+					>
+						{each.transStatus}
+					</p>
+				),
 			};
 		});
 		setNewDisplay(updated);
@@ -59,9 +69,7 @@ const OverviewPage = () => {
 			<div className="flex justify-between items-center my-10">
 				<Input
 					placeholder="Search for customer’s name"
-					
 					handleNewDisplay={handleNewDisplay}
-					
 				/>
 				<Button textTitle="Export" />
 			</div>
@@ -118,7 +126,17 @@ const newData = data.map((each, i) => {
 		deposit: each.depositSum,
 		date: each.dateAndTime,
 		voucherNo: each.voucherNumber,
-		transactionStatus: each.transStatus,
+		transactionStatus: (
+			<span
+				className={`${
+					each.transStatus == "Successful"
+						? `text-green-700 bg-green-50`
+						: `text-red-600 bg-red-50`
+				} rounded-2xl  text-[10px] px-2 flex items-center justify-center`}
+			>
+				{each.transStatus}
+			</span>
+		),
 	};
 });
 

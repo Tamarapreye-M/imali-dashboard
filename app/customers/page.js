@@ -120,7 +120,14 @@ const newData = data.map((each, i) => {
 		date: each.date,
 		voucherNo: each.voucherNumber,
 		kycStatus: each.kycStatus,
-		view: <Link href={`/customers/${each.slug}`}>{each.viewLink}</Link>,
+		view: (
+			<Link
+				href={`/customers/${each.slug}`}
+				className=" text-blue-700 underline"
+			>
+				{each.viewLink}
+			</Link>
+		),
 	};
 });
 // const data = [

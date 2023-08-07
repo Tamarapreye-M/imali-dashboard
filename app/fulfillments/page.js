@@ -86,7 +86,14 @@ const newData = data.map((each, i) => {
 		price: each.depositSum,
 		date: each.date,
 		vehicleModel: each.vehicleModel,
-		colStatus: <Link href={`/fulfillments/${each.slug}`}>{each.viewLink}</Link>,
+		colStatus: (
+			<Link
+				href={`/fulfillments/${each.slug}`}
+				className=" text-blue-700 underline"
+			>
+				{each.viewLink}
+			</Link>
+		),
 	};
 });
 
