@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Input from "../components/Input";
 import Button from "../components/button";
 import Table from "../components/Table";
@@ -7,6 +9,31 @@ import ProfileComp from "../components/ProfileComp";
 import Link from "next/link";
 
 const FulfillmentsPage = () => {
+	const [newDisplay, setNewDisplay] = useState(newData);
+	const handleNewDisplay = (ev) => {
+		let filtered = data.filter((each) =>
+			each.name.toLowerCase().includes(ev.target.value)
+		);
+		let updated = filtered.map((each, i) => {
+			return {
+				customer: (
+					<ProfileComp
+						key={i}
+						name={each.name}
+						phoneNumber={each.phoneNumber}
+						picture={each.avatar}
+					/>
+				),
+				price: each.depositSum,
+				date: each.date,
+				vehicleModel: each.vehicleModel,
+				colStatus: (
+					<Link href={`/fulfillments/${each.slug}`}>{each.viewLink}</Link>
+				),
+			};
+		});
+		setNewDisplay(updated);
+	};
 	return (
 		// <FulfillmentsProfile />
 		<div className="container px-10 pt-10">
@@ -20,11 +47,14 @@ const FulfillmentsPage = () => {
 			</div>
 
 			<div className="flex justify-between items-center my-10">
-				<Input placeholder="Search for customer’s name" />
+				<Input
+					placeholder="Search for customer’s name"
+					handleNewDisplay={handleNewDisplay}
+				/>
 				<Button textTitle="Export" />
 			</div>
 			<div>
-				<Table headers={tableHeaders} data={newData} />
+				<Table headers={tableHeaders} data={newDisplay} />
 			</div>
 		</div>
 	);

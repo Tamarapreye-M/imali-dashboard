@@ -17,7 +17,7 @@ const data = [
 		voucherNumber: "00437E",
 		transStatus: "Successful",
 		date: "06 Jan, 2022",
-		kycStatus: "Failed",
+		kycStatus: "Active",
 		viewLink: "view",
 		email: "olivia@company.com",
 		loanAndPriceAmount: "NGN 34,600",

@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useContext } from "react";
 import data from "../data/data";
 import OVERVIEWWALLET from "../assets/overviewWallet.svg";
 import Card from "../components/Card";
@@ -7,12 +9,37 @@ import Button from "../components/button";
 import Table from "../components/Table";
 // import { headers } from "next/dist/client/components/headers";
 import Image from "next/image";
+import { useDataContext } from "../providers";
 
 import DOLLARLIGHT from "../assets/dollar-icon-light.svg";
 import TRANSACTION from "../assets/transaction-icon.svg";
 import ProfileComp from "../components/ProfileComp";
 
 const OverviewPage = () => {
+	// const { display, setDisplay, handleDisplay } = useDataContext();
+	const [newDisplay, setNewDisplay] = React.useState(newData);
+	const handleNewDisplay = (ev) => {
+		let filtered = data.filter((each) =>
+			each.name.toLowerCase().includes(ev.target.value)
+		);
+		let updated = filtered.map((each, i) => {
+			return {
+				customers: (
+					<ProfileComp
+						key={i}
+						name={each.name}
+						phoneNumber={each.phoneNumber}
+						picture={each.avatar}
+					/>
+				),
+				deposit: each.depositSum,
+				date: each.dateAndTime,
+				voucherNo: each.voucherNumber,
+				transactionStatus: each.transStatus,
+			};
+		});
+		setNewDisplay(updated);
+	};
 	return (
 		<div className="container px-10 py-8">
 			<h1 className="text-3xl my-6">Overview</h1>
@@ -30,11 +57,16 @@ const OverviewPage = () => {
 				{/* <Card image={<></>} title="Total outstanding balance" value={"$6000"} /> */}
 			</div>
 			<div className="flex justify-between items-center my-10">
-				<Input placeholder="Search for customer’s name" />
+				<Input
+					placeholder="Search for customer’s name"
+					
+					handleNewDisplay={handleNewDisplay}
+					
+				/>
 				<Button textTitle="Export" />
 			</div>
 			<div>
-				<Table headers={tableHeaders} data={newData} />
+				<Table headers={tableHeaders} data={newDisplay} />
 			</div>
 		</div>
 	);

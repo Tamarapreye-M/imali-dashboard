@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 // import data from "../data/data";
 import data from "../data/data";
 
@@ -13,6 +15,29 @@ import SHIELD from "../assets/shield-icon.svg";
 import PERSON from "../assets/defaulters-account-icon.svg";
 
 const DefaultersPage = () => {
+	const [newDisplay, setNewDisplay] = useState(newData);
+	const handleNewDisplay = (ev) => {
+		let filtered = data.filter((each) =>
+			each.name.toLowerCase().includes(ev.target.value)
+		);
+		let updated = filtered.map((each, i) => {
+			return {
+				driver: (
+					<ProfileComp
+						key={i}
+						name={each.name}
+						phoneNumber={each.phoneNumber}
+						picture={each.avatar}
+					/>
+				),
+				loanAmount: each.loanAndPriceAmount,
+				date: each.date,
+				loanStatus: each.loanStatus,
+				view: "view",
+			};
+		});
+		setNewDisplay(updated);
+	};
 	return (
 		<div className="container px-10 py-8">
 			<h1 className="text-3xl my-6">Defaulters</h1>
@@ -30,11 +55,14 @@ const DefaultersPage = () => {
 				{/* <Card image={<></>} title="Total outstanding balance" value={"$6000"} /> */}
 			</div>
 			<div className="flex justify-between items-center my-10">
-				<Input placeholder="Search for customer’s name" />
+				<Input
+					placeholder="Search for customer’s name"
+					handleNewDisplay={handleNewDisplay}
+				/>
 				<Button textTitle="Export" textColor={"text-white"} />
 			</div>
 			<div>
-				<Table headers={tableHeaders} data={newData} />
+				<Table headers={tableHeaders} data={newDisplay} />
 			</div>
 		</div>
 	);

@@ -2,7 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import DashboardPage from "./dashboard/page";
 import Header from "./components/Header";
-
+import DataProvider from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 					<DashboardPage />
 					<div className=" bg-[#F7F7F7] h-screen w-full overflow-auto relative">
 						<Header />
-						{children}
+						<DataProvider>{children}</DataProvider>
 					</div>
 				</div>
 			</body>
