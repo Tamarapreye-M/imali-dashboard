@@ -79,8 +79,15 @@ function Table({ headers, data }) {
 															  item.toLowerCase() == "verified" ? (
 																<Badge
 																	textColor={"#027A48"}
-																	textTitle={"Active"}
+																	textTitle={"Verified"}
 																	background={"#ECFDF3"}
+																/>
+															) : typeof item == "string" &&
+															  item.toLowerCase() == "failed" ? (
+																<Badge
+																	textColor={"#B42318"}
+																	textTitle={"Failed"}
+																	background={"#FEF3F2"}
 																/>
 															) : (
 																item

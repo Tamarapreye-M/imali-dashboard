@@ -9,49 +9,46 @@ import { GoTag } from "react-icons/go";
 
 const DashboardPage = () => {
 	return (
-		
-			<div className="dashboard p-8 bg-[#fff] w-[307px]">
-				<div className="mb-6">
+		<div className="dashboard p-8 bg-[#fff] w-[400px]">
+			<div className="mb-6">
+				<Link href={"/"}>
 					<Image
 						src={imaliPayLogo}
-						width={161}
-						height={43}
+						width={170}
+						height={50}
 						alt="Picture of the author"
 					/>
-				</div>
-				<h1 className="text-[#808080] my-8 text-xs">QUICK MENU</h1>
-				<nav className="flex flex-col gap-8 border-l-[#F7F7F7]">
-					<Link href={"/"} className="flex items-center gap-1 text-base">
-						<MdOutlineSpaceDashboard className=" rotate-90" />{" "}
-						<span>Overview</span>
-					</Link>
-					<Link
-						href={"/customers"}
-						className="flex items-center gap-1 text-base"
-					>
-						{" "}
-						<TbUserCircle /> <span>Customers</span>{" "}
-					</Link>
-					<Link
-						href={"/defaulters"}
-						className="flex items-center gap-1 text-base"
-					>
-						<MdWallet />
-						<span>Defaulters</span>
-					</Link>
-					<Link
-						href={"/fulfillments"}
-						className="flex items-center gap-1 text-base"
-					>
-						<GoTag />
-						<span>Fulfillments</span>
-					</Link>
-					<Link href={"/account"} className="flex items-center gap-1 text-base">
-						<span>Account Summary</span>
-					</Link>
-				</nav>
+				</Link>
 			</div>
-		
+			<h1 className="text-[#808080] my-8 text-xs">QUICK MENU</h1>
+			<nav className="flex flex-col gap-8 border-l-[#F7F7F7]">
+				<Link href={"/"} className="flex items-center gap-1 text-base">
+					<MdOutlineSpaceDashboard className=" rotate-90" />{" "}
+					<span>Overview</span>
+				</Link>
+				<Link href={"/customers"} className="flex items-center gap-1 text-base">
+					{" "}
+					<TbUserCircle /> <span>Customers</span>{" "}
+				</Link>
+				<Link
+					href={"/defaulters"}
+					className="flex items-center gap-1 text-base"
+				>
+					<MdWallet />
+					<span>Defaulters</span>
+				</Link>
+				<Link
+					href={"/fulfillments"}
+					className="flex items-center gap-1 text-base"
+				>
+					<GoTag />
+					<span>Fulfillments</span>
+				</Link>
+				<Link href={"/account"} className="flex items-center gap-1 text-base">
+					<span>Account Summary</span>
+				</Link>
+			</nav>
+		</div>
 	);
 };
 

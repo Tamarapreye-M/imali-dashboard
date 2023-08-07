@@ -28,7 +28,12 @@ const FulfillmentsPage = () => {
 				date: each.date,
 				vehicleModel: each.vehicleModel,
 				colStatus: (
-					<Link href={`/fulfillments/${each.slug}`}>{each.viewLink}</Link>
+					<Link
+						href={`/fulfillments/${each.slug}`}
+						className=" text-blue-700 underline"
+					>
+						{each.viewLink}
+					</Link>
 				),
 			};
 		});
