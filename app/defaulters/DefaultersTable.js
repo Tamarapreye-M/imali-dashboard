@@ -1,8 +1,6 @@
 import React from "react";
-import { TRANSACTION_STATUS } from "../overview/page";
-import Badge from "./Badge";
 
-function Table({ headers, data }) {
+const DefaultersTable = () => {
 	return (
 		<div className="flex flex-col">
 			<div className="overflow-x-auto shadow-md sm:rounded-lg">
@@ -59,33 +57,15 @@ function Table({ headers, data }) {
 												return (
 													<>
 														<td
-															key={i}
-															className={`py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap `}
+															className={`py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap ${
+																item === TRANSACTION_STATUS.SUCCESFUL &&
+																"text-green-500"
+															} ${
+																item === TRANSACTION_STATUS.FAILED &&
+																"text-red-500"
+															}`}
 														>
-															{typeof item == "string" &&
-															item.toLowerCase() == "failed" ? (
-																<Badge
-																	textColor={"#B42318"}
-																	textTitle={"Failed"}
-																	background={"#FEF3F2"}
-																/>
-															) : typeof item == "string" &&
-															  item.toLowerCase() == "successful" ? (
-																<Badge
-																	textColor={"#027A48"}
-																	textTitle={"Successful"}
-																	background={"#ECFDF3"}
-																/>
-															) : typeof item == "string" &&
-															  item.toLowerCase() == "verified" ? (
-																<Badge
-																	textColor={"#027A48"}
-																	textTitle={"Active"}
-																	background={"#ECFDF3"}
-																/>
-															) : (
-																item
-															)}
+															{item}
 														</td>
 													</>
 												);
@@ -100,6 +80,6 @@ function Table({ headers, data }) {
 			</div>
 		</div>
 	);
-}
+};
 
-export default Table;
+export default DefaultersTable;
