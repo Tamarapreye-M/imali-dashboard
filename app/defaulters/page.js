@@ -31,7 +31,7 @@ const DefaultersPage = () => {
 			</div>
 			<div className="flex justify-between items-center my-10">
 				<Input placeholder="Search for customer’s name" />
-				<Button textTitle="Export" />
+				<Button textTitle="Export" textColor={"text-white"} />
 			</div>
 			<div>
 				<Table headers={tableHeaders} data={newData} />

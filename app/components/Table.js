@@ -1,5 +1,4 @@
 import React from "react";
-import { TRANSACTION_STATUS } from "../overview/page";
 import Badge from "./Badge";
 
 function Table({ headers, data }) {
