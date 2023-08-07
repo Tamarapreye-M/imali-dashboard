@@ -14,7 +14,7 @@ const PercentageCard = () => {
 				</p>
 			</div>
 			<div className="relative">
-				<svg
+				{/* <svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="132"
 					height="132"
@@ -30,7 +30,7 @@ const PercentageCard = () => {
 						stroke-opacity="0.05"
 						stroke-width="7"
 					/>
-				</svg>
+				</svg> */}
 			</div>
 		</div>
 	);
